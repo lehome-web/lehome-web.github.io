@@ -1,343 +1,395 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="Merlin: Empowering Multimodal LLMs with Foresight Minds">
+    <meta name="description"
+        content="LeHome: A Simulation Environment for Deformable Object Manipulation in Household Scenarios">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f3efe7">
+    <meta name="color-scheme" content="light">
     <title>LeHome: A Simulation Environment for Deformable Object Manipulation in Household Scenarios</title>
-    <link rel='icon' type='image/png' href='static/assets/figure/lehome_logo.png'>
-    <link rel="stylesheet" href="./static/css/own.min.css">
-    <link rel="stylesheet" href="./static/css/custom.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Shantell+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css" rel="stylesheet" />
-    <script defer src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="./static/css/index.min.css">
-    <script defer src="./static/js/index.min.js"></script>
+    <link rel="icon" type="image/png" href="static/assets/figure/lehome_logo.png">
+    <link rel="preload" as="image" href="static/assets/figure/background.png">
+    <link rel="preload" as="font" type="font/ttf" href="static/font/Acme-Regular.ttf" crossorigin>
+    <link rel="stylesheet" href="static/css/own.min.css">
+    <script defer src="static/js/index.min.js"></script>
 </head>
 
 <body>
-    <section class="hero">
-        <div class="hero-body-background">
-            <div class="hero-body-background-div"></div>
-            <div style="text-align: center; z-index: 1; margin-top: 100px">
-                <p class="word1 shakefont shadowtext" style="margin-right: -10px; color: #FFC5C5;font-family:Acme">L</p>
-                <p class="word2 shakefont shadowtext" style="margin-right: -2px; color: #ecd1aa;font-family:Acme">e</p>
-                <p class="word3 shakefont shadowtext" style="margin-right: -2px; color: #fe8e8e;font-family:Acme">H</p>
-                <p class="word4 shakefont shadowtext" style="margin-right: -10px; color: #98d4e6;font-family:Acme">o</p>
-                <p class="word5 shakefont shadowtext" style="margin-right: -10px; color: #c8a4dd;font-family:Acme">m</p>
-                <p class="word6 shakefont shadowtext" style="margin-right: -10px; color: #a4ddc2;font-family:Acme">e</p>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="site-brand" href="#home">
+                <img class="site-brand__logo" src="static/assets/figure/lehome_logo.png" alt="LeHome logo" width="40"
+                    height="40">
+                <span class="site-brand__name">LeHome</span>
+            </a>
 
-                <p class="acmefont shadowtext high-font" style="color: #FFFFFF;">
-                    A Simulation Environment for Deformable Object Manipulation in Household Scenarios
-                    &nbsp;&nbsp;&nbsp;
-                </p>
-            </div>
-            <div class="columns is-centered" style="z-index: 1; margin-top: -50px">
-                <div class="column has-text-centered ">
+            <nav class="site-nav" aria-label="Primary">
+                <a class="site-nav__link" href="#home" data-nav-link="home">Home</a>
+                <a class="site-nav__link" href="#video" data-nav-link="video">Video</a>
+                <a class="site-nav__link" href="#highlights" data-nav-link="highlights">Highlights</a>
+                <a class="site-nav__link" href="#gallery" data-nav-link="gallery">Gallery</a>
+                <a class="site-nav__link" href="#citation" data-nav-link="citation">Citation</a>
+            </nav>
 
-                    <div class="column has-text-centered" style="font-family:DMSerifText">
-                        <div class="publication-links">
-                            <span class="link-block">
-                                <a href="static/assets/paper.pdf"
-                                    class="external-link button is-normal is-rounded light-btn btn-font">
-                                    <span class="icon">
-                                        <i class="fas fa-file-pdf"></i>
-                                    </span>
-                                    <span class="sansfont">Paper</span>
-                                </a>
-                            </span>
+            <div class="site-header__spacer" aria-hidden="true"></div>
+        </div>
+    </header>
 
-                            <!-- <span class="link-block">
-                                <a href="https://github.com/1izeyi/lehome"
-                                    class="external-link button is-normal is-rounded light-btn btn-font">
-                                    <span class="icon">
-                                        <i class="fa-solid fa-desktop"></i>
-                                    </span>
-                                    <span class="sansfont">Code is Coming</span>
-                                </a>
-                            </span> -->
+    <main class="page-shell">
+        <section class="page-hero" id="home" data-nav-section="home" aria-labelledby="page-title">
+            <div class="page-hero__overlay" aria-hidden="true"></div>
+            <div class="page-hero__inner">
+                <div class="hero-meta">
+                    <img class="hero-logo" src="static/assets/figure/lehome_logo.png" alt="LeHome logo" width="76"
+                        height="76" fetchpriority="high">
+                    <p class="hero-award">ICRA 2026 Accepted | Best Poster of IROS 2025 WS</p>
+                </div>
 
-                        </div>
+                <div class="hero-copy">
+                    <h1 id="page-title" class="hero-title" aria-label="LeHome">
+                        <span class="hero-title__letter hero-title__letter--rose">L</span>
+                        <span class="hero-title__letter hero-title__letter--sand">e</span>
+                        <span class="hero-title__letter hero-title__letter--coral">H</span>
+                        <span class="hero-title__letter hero-title__letter--sky">o</span>
+                        <span class="hero-title__letter hero-title__letter--violet">m</span>
+                        <span class="hero-title__letter hero-title__letter--mint">e</span>
+                    </h1>
 
+                    <p class="hero-subtitle">
+                        <span class="hero-subtitle__line">A Simulation Environment for</span>
+                        <span class="hero-subtitle__line">Deformable Object Manipulation</span>
+                        <span class="hero-subtitle__line">in Household Scenarios</span>
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="paper-button" href="static/assets/paper.pdf">Paper</a>
+                        <a class="paper-button paper-button--secondary" href="https://lehome-challenge.com/" target="_blank" rel="noopener noreferrer">Challenge</a>
                     </div>
-<span style="color: #fefefe;"><b>*ICRA2026 Accepted ＆ Best Poster of IROS 2025 WS </b></span>
                 </div>
             </div>
+        </section>
 
-        </div>
-        </div>
-    </section>
+        <section class="page-section page-section--deferred" id="video" data-nav-section="video"
+            aria-labelledby="video-title">
+            <div class="section-frame section-frame--wide">
+                <div class="section-heading section-heading--center">
+                    <h2 id="video-title" class="section-title">Video</h2>
+                </div>
 
-    <section class="hero">
-        <div class="columns" style="background: linear-gradient(#e8e7e7, #FfFfFf);">
-            <div class="column auto"></div>
-            <div class="column is-half">
-                <div class="hero-body-long-video"
-                    style="display: flex; flex-direction: column; justify-content: space-around;">
-                    <div class=""
-                        style="width: 150%; display: flex; justify-content: space-around; align-items: center; text-align: center;">
-                        <video class="lazy" controls width="100%" autoplay loop muted style="border-radius: 20pt;">
-                            <source data-src="static/assets/video/mainvideo.mp4" type="video/mp4">
+                <article class="video-card glass-panel" data-main-video-shell
+                    data-video-src="static/assets/video/mainvideo.mp4">
+                    <div class="video-shell">
+                        <button class="video-shell__button" type="button" aria-label="Play video"
+                            data-main-video-button>
+                            <span class="video-shell__play" aria-hidden="true"></span>
+                            <span class="sr-only">Play video</span>
+                        </button>
+                        <div class="video-shell__placeholder" aria-hidden="true"></div>
+                        <div class="video-shell__player" data-main-video-player></div>
+                    </div>
+                    <noscript>
+                        <video class="main-video" controls playsinline preload="metadata">
+                            <source src="static/assets/video/mainvideo.mp4" type="video/mp4">
                         </video>
+                    </noscript>
+                </article>
+            </div>
+        </section>
+
+        <section class="page-section page-section--deferred" id="highlights" data-nav-section="highlights"
+            aria-labelledby="highlights-title">
+            <div class="section-frame section-frame--narrow">
+                <div class="section-heading">
+                    <h2 id="highlights-title" class="section-title">Highlights</h2>
+                </div>
+
+                <figure class="glass-panel overview-card" id="highlights-figure">
+                    <img class="overview-card__image" src="static/assets/figure/arch.png"
+                        alt="LeHome assets, engine, and benchmark overview" loading="lazy" decoding="async"
+                        width="1200" height="768">
+                </figure>
+
+                <article class="highlights-stack">
+                    <details class="highlight-item glass-panel">
+                        <summary class="highlight-summary">
+                            <span class="highlight-summary__index">01</span>
+                            <span class="highlight-summary__title">Household Scenes</span>
+                        </summary>
+                        <div class="highlight-detail">
+                            LeHome simulates <strong>Four Household Environments</strong> (kitchen, living room,
+                            washroom, and bedroom) with photorealistic assets and diverse interactive objects. These
+                            scenes cover a wide range of <strong>Daily Tasks</strong> such as folding clothes,
+                            cooking, and cleaning, providing a comprehensive platform for studying embodied
+                            manipulation in realistic home settings.
+                        </div>
+                    </details>
+
+                    <details class="highlight-item glass-panel">
+                        <summary class="highlight-summary">
+                            <span class="highlight-summary__index">02</span>
+                            <span class="highlight-summary__title">Deformable Physics</span>
+                        </summary>
+                        <div class="highlight-detail">
+                            LeHome focuses on <strong>Deformable Object</strong> simulation and manipulation, covering
+                            <strong>Six Physical Categories</strong>: Liquid, Gaseous Fluid, Granular Object, Linear
+                            Object, Thin Shell, and Volumetric Object. Using methods like PBD and FEM, it achieves
+                            high-fidelity simulations of elastic, plastic, and flow behaviors, enabling
+                            <strong>Realistic Interactions</strong> such as cutting, wrinkling, and pouring.
+                        </div>
+                    </details>
+
+                    <details class="highlight-item glass-panel">
+                        <summary class="highlight-summary">
+                            <span class="highlight-summary__index">03</span>
+                            <span class="highlight-summary__title">Action Graph</span>
+                        </summary>
+                        <div class="highlight-detail">
+                            LeHome introduces the <strong>Action Graph</strong>, a causal event-driven mechanism that
+                            links physical dynamics with logical task execution. This system ensures realistic
+                            cause-effect relationships in manipulation, such as a knife cutting a sausage or opening a
+                            microwave, by modeling triggers, computations, and state updates in a structured graph.
+                        </div>
+                    </details>
+
+                    <details class="highlight-item glass-panel">
+                        <summary class="highlight-summary">
+                            <span class="highlight-summary__index">04</span>
+                            <span class="highlight-summary__title">Robot Support</span>
+                        </summary>
+                        <div class="highlight-detail">
+                            LeHome supports <strong>Low-Cost</strong> and <strong>Open-Source</strong> robots. It
+                            supports keyboard, game controller, and leader-follower teleoperation, enabling easy data
+                            collection and high-fidelity teleoperation demonstrations. This combination offers an
+                            affordable, scalable solution for developing and testing household robotic policies.
+                        </div>
+                    </details>
+                </article>
+            </div>
+        </section>
+
+        <section class="page-section page-section--deferred" id="gallery" data-nav-section="gallery"
+            aria-labelledby="gallery-title">
+            <div class="section-frame">
+                <div class="section-heading">
+                    <h2 id="gallery-title" class="section-title">Deformable Gallery</h2>
+                </div>
+
+                <div class="gallery-slider" data-gallery-slider>
+                    <button class="gallery-slider__arrow gallery-slider__arrow--prev" type="button"
+                        data-gallery-prev aria-label="Show previous gallery page">
+                        <span aria-hidden="true">&#8249;</span>
+                    </button>
+
+                    <div class="gallery-track" data-gallery-track>
+                        <div class="gallery-page" data-gallery-page>
+                            <article class="gallery-card glass-panel">
+                                <div class="gallery-media" data-gallery-media>
+                                    <video class="gallery-video" muted loop playsinline preload="none"
+                                        aria-label="Pour the coffee beans out of the bowl.">
+                                        <source data-src="static/assets/video/deformable/1.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <p class="gallery-caption">Pour the coffee beans out of the bowl.</p>
+                            </article>
+
+                            <article class="gallery-card glass-panel">
+                                <div class="gallery-media" data-gallery-media>
+                                    <video class="gallery-video" muted loop playsinline preload="none"
+                                        aria-label="Wipe the dust off the table with a sponge.">
+                                        <source data-src="static/assets/video/deformable/2.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <p class="gallery-caption">Wipe the dust off the table with a sponge.</p>
+                            </article>
+
+                            <article class="gallery-card glass-panel">
+                                <div class="gallery-media" data-gallery-media>
+                                    <video class="gallery-video" muted loop playsinline preload="none"
+                                        aria-label="Place the beef patties on the bread on the plate.">
+                                        <source data-src="static/assets/video/deformable/3.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <p class="gallery-caption">Place the beef patties on the bread on the plate.</p>
+                            </article>
+
+                            <article class="gallery-card glass-panel">
+                                <div class="gallery-media" data-gallery-media>
+                                    <video class="gallery-video" muted loop playsinline preload="none"
+                                        aria-label="Cut the sausage into sections with a knife.">
+                                        <source data-src="static/assets/video/deformable/4.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <p class="gallery-caption">Cut the sausage into sections with a knife.</p>
+                            </article>
+
+                            <article class="gallery-card glass-panel">
+                                <div class="gallery-media" data-gallery-media>
+                                    <video class="gallery-video" muted loop playsinline preload="none"
+                                        aria-label="Plug the cable into the socket.">
+                                        <source data-src="static/assets/video/deformable/5.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <p class="gallery-caption">Plug the cable into the socket.</p>
+                            </article>
+
+                            <article class="gallery-card glass-panel">
+                                <div class="gallery-media" data-gallery-media>
+                                    <video class="gallery-video" muted loop playsinline preload="none"
+                                        aria-label="Hang the bag on the hanger hook.">
+                                        <source data-src="static/assets/video/deformable/6.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <p class="gallery-caption">Hang the bag on the hanger hook.</p>
+                            </article>
+                        </div>
+
+                        <div class="gallery-page" data-gallery-page>
+                            <article class="gallery-card glass-panel">
+                                <div class="gallery-media" data-gallery-media>
+                                    <video class="gallery-video" muted loop playsinline preload="none"
+                                        aria-label="Fold and unfold a poster.">
+                                        <source data-src="static/assets/video/deformable/7.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <p class="gallery-caption">Fold and unfold a poster.</p>
+                            </article>
+
+                            <article class="gallery-card glass-panel">
+                                <div class="gallery-media" data-gallery-media>
+                                    <video class="gallery-video" muted loop playsinline preload="none"
+                                        aria-label="Fling a denim top.">
+                                        <source data-src="static/assets/video/deformable/8.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <p class="gallery-caption">Fling a denim top.</p>
+                            </article>
+
+                            <article class="gallery-card glass-panel">
+                                <div class="gallery-media" data-gallery-media>
+                                    <video class="gallery-video" muted loop playsinline preload="none"
+                                        aria-label="Wipe the dirty water off the floor with a rag.">
+                                        <source data-src="static/assets/video/deformable/9.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <p class="gallery-caption">Wipe the dirty water off the floor with a rag.</p>
+                            </article>
+
+                            <article class="gallery-card glass-panel">
+                                <div class="gallery-media" data-gallery-media>
+                                    <video class="gallery-video" muted loop playsinline preload="none"
+                                        aria-label="Deformation of ketchup on bread.">
+                                        <source data-src="static/assets/video/deformable/10.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <p class="gallery-caption">Deformation of ketchup on bread.</p>
+                            </article>
+
+                            <article class="gallery-card glass-panel">
+                                <div class="gallery-media" data-gallery-media>
+                                    <video class="gallery-video" muted loop playsinline preload="none"
+                                        aria-label="Operate the knob until flame appears.">
+                                        <source data-src="static/assets/video/deformable/11.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <p class="gallery-caption">Operate the knob until flame appears.</p>
+                            </article>
+
+                            <article class="gallery-card glass-panel">
+                                <div class="gallery-media" data-gallery-media>
+                                    <video class="gallery-video" muted loop playsinline preload="none"
+                                        aria-label="Use sweeping to clean particles.">
+                                        <source data-src="static/assets/video/deformable/12.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <p class="gallery-caption">Use sweeping to clean particles.</p>
+                            </article>
+                        </div>
+
+                        <div class="gallery-page" data-gallery-page>
+                            <article class="gallery-card glass-panel">
+                                <div class="gallery-media" data-gallery-media>
+                                    <video class="gallery-video" muted loop playsinline preload="none"
+                                        aria-label="Open and close blinds.">
+                                        <source data-src="static/assets/video/deformable/13.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <p class="gallery-caption">Open and close blinds.</p>
+                            </article>
+
+                            <article class="gallery-card glass-panel">
+                                <div class="gallery-media" data-gallery-media>
+                                    <video class="gallery-video" muted loop playsinline preload="none"
+                                        aria-label="Turn on the microwave as the light comes on.">
+                                        <source data-src="static/assets/video/deformable/14.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <p class="gallery-caption">Turn on the microwave as the light comes on.</p>
+                            </article>
+
+                            <article class="gallery-card glass-panel">
+                                <div class="gallery-media" data-gallery-media>
+                                    <video class="gallery-video" muted loop playsinline preload="none"
+                                        aria-label="Operating the knob to heat the beef patties.">
+                                        <source data-src="static/assets/video/deformable/15.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <p class="gallery-caption">Operating the knob to heat the beef patties.</p>
+                            </article>
+
+                            <article class="gallery-card glass-panel">
+                                <div class="gallery-media" data-gallery-media>
+                                    <video class="gallery-video" muted loop playsinline preload="none"
+                                        aria-label="Fold denim jacket on the table.">
+                                        <source data-src="static/assets/video/deformable/16.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <p class="gallery-caption">Fold denim jacket on the table.</p>
+                            </article>
+                        </div>
                     </div>
-                    <div class="long-font" style="font-family:'Acme';color:#595959;">
-                        VIDEO
+
+                    <button class="gallery-slider__arrow gallery-slider__arrow--next" type="button"
+                        data-gallery-next aria-label="Show next gallery page">
+                        <span aria-hidden="true">&#8250;</span>
+                    </button>
+
+                    <div class="gallery-slider__controls" aria-label="Gallery pagination">
+                        <button class="gallery-slider__dot is-active" type="button" data-gallery-dot="0"
+                            aria-label="Show gallery page 1"></button>
+                        <button class="gallery-slider__dot" type="button" data-gallery-dot="1"
+                            aria-label="Show gallery page 2"></button>
+                        <button class="gallery-slider__dot" type="button" data-gallery-dot="2"
+                            aria-label="Show gallery page 3"></button>
                     </div>
                 </div>
             </div>
-            <div class="column auto"></div>
-        </div>
-    </section>
+        </section>
 
-    <section class="hero">
-        <div class="hero-body-subtitle" style="display: block">
-            <div class="columns is-centered has-text-centered">
-                <div class="container is-max-maxwidth">
-                    <div class="title sansfont mode-font" style="font-family:'Acme';color:#595959;">
-                        🔥Highlights
-                    </div>
-                    <div class="content has-text-justified">
-                        <ol type="1">
-                            <li> LeHome simulates <span style="color: #fe8e8e;"><b>Four Household
-                                        Environments</b></span> (kitchen, living room, washroom,
-                                and bedroom) with photorealistic assets and diverse interactive objects. These scenes
-                                cover a wide range of <span style="color: #fe8e8e;"><b>Daily Tasks</b></span> such as
-                                folding clothes, cooking, and cleaning,
-                                providing a comprehensive platform for studying embodied manipulation in realistic home
-                                settings.</li>
-                            <br>
-                            <li>LeHome focuses on <span style="color: #fe8e8e;"><b>Deformable Object</b></span>
-                                simulation and manipulation, covering <span style="color: #fe8e8e;"><b>Six Physical
-                                        Categories</b></span>:
-                                Liquid, Gaseous Fluid, Granular Object, Linear Object, Thin Shell, and
-                               Volumetric Objec. Using methods like PBD and FEM, it achieves high-fidelity
-                                simulations of elastic, plastic, and flow behaviors, enabling <span
-                                    style="color: #fe8e8e;"><b> Realistic Interactions</b></span>
-                                such as cutting, wrinkling, and pouring.
-                            </li>
-                            <br>
-                            <li>LeHome introduces the <span style="color: #fe8e8e;"><b>Action Graph</b></span>, a causal
-                                event-driven mechanism that links physical
-                                dynamics with logical task execution. This system ensures realistic cause-effect
-                                relationships in manipulation — such as a knife cutting a sausage or opening a
-                                microwave — by modeling triggers, computations, and state updates in a structured graph.
-                            </li>
-                            <br>
-                            <li>LeHome supports <span style="color: #fe8e8e;"><b> Low-Cost</b></span> & <span
-                                    style="color: #fe8e8e;"><b> Open-Source </b></span>robot. It supports keyboard, game controller, and leader–follower
-                                teleoperation, enabling easy data collection and high-fidelity teleoperation
-                                demonstrations. This combination offers an affordable, scalable solution for developing
-                                and testing household robotic policies.
-                            </li>
-                            <br>
-                        </ol>
-                    </div>
+        <section class="page-section page-section--deferred" id="citation" data-nav-section="citation"
+            aria-labelledby="citation-title">
+            <div class="section-frame section-frame--narrow">
+                <div class="section-heading">
+                    <h2 id="citation-title" class="section-title">Citation</h2>
                 </div>
+
+                <article class="citation-card glass-panel">
+                    <div class="citation-toolbar">
+                        <button class="copy-button" type="button" data-copy-citation>Copy BibTeX</button>
+                    </div>
+                    <pre class="citation-block" id="citation-bibtex"><code>@inproceedings{li2025lehome,
+  title={LeHome: A Simulation Environment for Deformable Object Manipulation in Household Scenarios},
+  author={Zeyi Li and Jade Yang and Jingkai Xu and Shangbin Xie and Tianxing Chen and Yuran Wang and Zhenhao Shen and Yan Shen and Yukun Zheng and Wenjun Li and Chaorui Zhang and Ming Chen and Chen Xie and Ruihai Wu},
+  booktitle={IROS 2025 Workshop ROMADO},
+  year={2025},
+  url={https://openreview.net/forum?id=rEDd1HorJl}
+}</code></pre>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <div style="border: #ffffff 20px solid;"></div>
-
-    <section class="hero">
-        <div class="hero-body-subtitle-light" style="display: block">
-            <div class="columns is-centered has-text-centered">
-                <div class="container is-max-maxwidth">
-                    <div class="title is-2 sansfont" style="font-family:'Acme';color:#595959; font-size: 68px;">
-                        Deformable Gallery
-                    </div>
-                    <div class="note-font" style="margin-top: -10pt; font-style: italic;">
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <div style="border: #999999 1px solid;"></div>
-
-    <section class="section">
-        <div class="container is-clipped">
-            <div id="slider3" class="custom-slider2">
-
-                <!-- + 1227 -->
-                <div class='card-0'>
-                    <div class='card card-1'>
-                        <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                <source data-src='static/assets/video/deformable/1.mp4' type='video/mp4'>
-                            </video></div>
-                        <div class='card-content'>
-                            <div class='prompt'>Pour the coffee beans out of the bowl.
-                            </div>
-                        </div>
-                    </div>
-                    <div class='card card-1'>
-                        <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                <source data-src='static/assets/video/deformable/2.mp4' type='video/mp4'>
-                            </video></div>
-                        <div class='card-content'>
-                            <div class='prompt'>Wipe the dust off the table with a sponge.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class='card-0'>
-                    <div class='card card-1'>
-                        <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                <source data-src='static/assets/video/deformable/3.mp4' type='video/mp4'>
-                            </video></div>
-                        <div class='card-content'>
-                            <div class='prompt'>Place the beef patties on the bread on the plate.</div>
-                        </div>
-                    </div>
-                    <div class='card card-1'>
-                        <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                <source data-src='static/assets/video/deformable/4.mp4' type='video/mp4'>
-                            </video></div>
-                        <div class='card-content'>
-                            <div class='prompt'>Cut the sausage into sections with a knife.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class='card-0'>
-                    <div class='card card-1'>
-                        <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                <source data-src='static/assets/video/deformable/5.mp4' type='video/mp4'>
-                            </video></div>
-                        <div class='card-content'>
-                            <div class='prompt'>Plug the cable into the socket.</div>
-                        </div>
-                    </div>
-                    <div class='card card-1'>
-                        <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                <source data-src='static/assets/video/deformable/6.mp4' type='video/mp4'>
-                            </video></div>
-                        <div class='card-content'>
-                            <div class='prompt'>Hang the bag on the hanger hook.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class='card-0'>
-                    <div class='card card-1'>
-                        <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                <source data-src='static/assets/video/deformable/7.mp4' type='video/mp4'>
-                            </video></div>
-                        <div class='card-content'>
-                            <div class='prompt'>Fold and unfold a poster.</div>
-                        </div>
-                    </div>
-                    <div class='card card-1'>
-                        <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                <source data-src='static/assets/video/deformable/8.mp4' type='video/mp4'>
-                            </video></div>
-                        <div class='card-content'>
-                            <div class='prompt'>Fling a denim top.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class='card-0'>
-                    <div class='card card-1'>
-                        <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                <source data-src='static/assets/video/deformable/9.mp4' type='video/mp4'>
-                            </video></div>
-                        <div class='card-content'>
-                            <div class='prompt'>Wipe the dirty water off the floor with a rag.</div>
-                        </div>
-                    </div>
-                    <div class='card card-1'>
-                        <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                <source data-src='static/assets/video/deformable/10.mp4' type='video/mp4'>
-                            </video></div>
-                        <div class='card-content'>
-                            <div class='prompt'>Deformation of ketchup on bread.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class='card-0'>
-                    <div class='card card-1'>
-                        <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                <source data-src='static/assets/video/deformable/11.mp4' type='video/mp4'>
-                            </video></div>
-                        <div class='card-content'>
-                            <div class='prompt'>Operate the knob until flame appears.</div>
-                        </div>
-                    </div>
-                    <div class='card card-1'>
-                        <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                <source data-src='static/assets/video/deformable/12.mp4' type='video/mp4'>
-                            </video></div>
-                        <div class='card-content'>
-                            <div class='prompt'>Use sweeping to clean particles.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class='card-0'>
-                    <div class='card card-1'>
-                        <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                <source data-src='static/assets/video/deformable/13.mp4' type='video/mp4'>
-                            </video></div>
-                        <div class='card-content'>
-                            <div class='prompt'>Open and close blinds.</div>
-                        </div>
-                    </div>
-                    <div class='card card-1'>
-                        <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                <source data-src='static/assets/video/deformable/14.mp4' type='video/mp4'>
-                            </video></div>
-                        <div class='card-content'>
-                            <div class='prompt'>Turn on the microwave as the light comes on.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class='card-0'>
-                    <div class='card card-1'>
-                        <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                <source data-src='static/assets/video/deformable/15.mp4' type='video/mp4'>
-                            </video></div>
-                        <div class='card-content'>
-                            <div class='prompt'>Operating the knob to heat the beef patties.</div>
-                        </div>
-                    </div>
-                    <div class='card card-1'>
-                        <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                <source data-src='static/assets/video/deformable/16.mp4' type='video/mp4'>
-                            </video></div>
-                        <div class='card-content'>
-                            <div class='prompt'>Fold denim jacket on the table.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- <section class="section" id="BibTeX">
-        <div class="container is-max-desktop content">
-            <h2 class="title">BibTeX</h2>
-            <pre><code>@inproceedings{
-    li2025lehome,
-    title={LeHome: A Simulation Environment for Deformable Object Manipulation in Household Scenarios},
-    author={Zeyi Li and Yushi Yang and Jingkai Xu and Shangbin Xie and Yuran Wang and Zhenhao Shen and Tianxing Chen and Yan Shen and Wenjun Li and Yukun Zheng and Chaorui Zhang and Ming Chen and Chen Xie and Ruihai Wu},
-    booktitle={IROS 2025 - 5th Workshop on RObotic MAnipulation of Deformable Objects: holistic approaches and challenges forward},
-    year={2025},
-    url={https://openreview.net/forum?id=rEDd1HorJl}
-} -->
-</code></pre>
-        </div>
-    </section>
-    <footer class="footer" style="padding: 2em;">
-        <div class="content has-text-centered">
-            <p>
-                The website template is borrowed from by <a
-                    href=https://qizekun.github.io/shapellm/ShapeLLM>ShapeLLM</a>
-                </a> and <a href="https://jgthms.com">Bulma</a>. We thank the authors for their codebase.
-            </p>
-        </div>
-    </footer>
 </body>
 
 </html>
