@@ -226,10 +226,60 @@ button {
     display: grid;
     align-items: end;
     min-height: 100svh;
+    overflow: hidden;
+    isolation: isolate;
     padding: calc(var(--header-height) + 2.5rem) var(--page-padding) 4rem;
     background:
         linear-gradient(180deg, rgba(31, 23, 14, 0.08), rgba(31, 23, 14, 0.34)),
-        url("../assets/figure/background.png") center 42% / cover no-repeat;
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.16), transparent 36%),
+        #d9d1c2;
+}
+
+.page-hero__backdrop {
+    position: absolute;
+    inset: 0;
+}
+
+.page-hero__slide {
+    position: absolute;
+    inset: -1.5%;
+    background-position: var(--hero-position, center center);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+    filter: saturate(0.94) contrast(1.04) brightness(0.8);
+    transform: scale(1.08);
+    transition:
+        opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform, filter;
+}
+
+.page-hero__slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(17, 12, 7, 0.5), rgba(17, 12, 7, 0.18) 40%, rgba(17, 12, 7, 0.1) 100%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(17, 12, 7, 0.24));
+}
+
+.page-hero__slide.is-active {
+    opacity: 1;
+    filter: saturate(0.98) contrast(1.06) brightness(0.9);
+    transform: scale(1.02);
+    animation: hero-slide-drift 7.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes hero-slide-drift {
+    0% {
+        transform: scale(1.09) translate3d(-1.3%, 0, 0);
+    }
+
+    100% {
+        transform: scale(1.02) translate3d(1.3%, -0.4%, 0);
+    }
 }
 
 .page-hero__overlay {
@@ -572,7 +622,7 @@ button {
     border-radius: calc(var(--radius-xl) - 6px);
     background:
         linear-gradient(180deg, rgba(26, 20, 14, 0.12), rgba(26, 20, 14, 0.36)),
-        url("../assets/figure/background.png") center center / cover no-repeat;
+        url("../assets/figure/hero-scene-kitchen-island.jpg") center center / cover no-repeat;
 }
 
 .video-shell__placeholder,
@@ -1018,7 +1068,10 @@ button {
         min-height: auto;
         padding-top: calc(var(--header-height) + 3rem);
         padding-bottom: 2.8rem;
-        background-position: 58% center;
+    }
+
+    .page-hero__slide {
+        background-position: var(--hero-mobile-position, var(--hero-position, center center));
     }
 
     .hero-meta {
@@ -1079,6 +1132,17 @@ button {
 
     .highlight-detail {
         padding: 0 1rem 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page-hero__slide {
+        transform: none;
+        transition: opacity 240ms ease;
+    }
+
+    .page-hero__slide.is-active {
+        animation: none;
     }
 }
 

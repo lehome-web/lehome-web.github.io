@@ -10,7 +10,7 @@
     <meta name="color-scheme" content="light">
     <title>LeHome: A Simulation Environment for Deformable Object Manipulation in Household Scenarios</title>
     <link rel="icon" type="image/png" href="static/assets/figure/lehome_logo.png">
-    <link rel="preload" as="image" href="static/assets/figure/background.png">
+    <link rel="preload" as="image" href="static/assets/figure/hero-scene-kitchen-island.jpg">
     <link rel="preload" as="font" type="font/ttf" href="static/font/Acme-Regular.ttf" crossorigin>
     <link rel="stylesheet" href="static/css/own.min.css">
     <script defer src="static/js/index.min.js"></script>
@@ -39,6 +39,20 @@
 
     <main class="page-shell">
         <section class="page-hero" id="home" data-nav-section="home" aria-labelledby="page-title">
+            <div class="page-hero__backdrop" aria-hidden="true">
+                <div class="page-hero__slide is-active"
+                    data-hero-slide
+                    style="background-image: url('static/assets/figure/hero-scene-kitchen-island.jpg'); --hero-position: 64% center; --hero-mobile-position: 78% center;">
+                </div>
+                <div class="page-hero__slide"
+                    data-hero-slide
+                    style="background-image: url('static/assets/figure/hero-scene-bedroom-closet.jpg'); --hero-position: 58% center; --hero-mobile-position: 72% center;">
+                </div>
+                <div class="page-hero__slide"
+                    data-hero-slide
+                    style="background-image: url('static/assets/figure/hero-scene-bedroom-dressing.jpg'); --hero-position: 61% center; --hero-mobile-position: 76% center;">
+                </div>
+            </div>
             <div class="page-hero__overlay" aria-hidden="true"></div>
             <div class="page-hero__inner">
                 <div class="hero-meta">
